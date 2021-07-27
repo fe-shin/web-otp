@@ -32,7 +32,7 @@ function App() {
           rel="noopener noreferrer"
         >
           {foo}
-          <input id="#id" />
+          <input id="#id" autocomplete="one-time-code" type="text" inputmode="numeric" />
         </a>
       </header>
     </div>
