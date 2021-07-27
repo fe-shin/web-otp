@@ -1,7 +1,21 @@
+import { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import useWebOTP from './useWebOTP';
 
 function App() {
+
+  const OTPValue = useWebOTP();
+
+  useEffect(() => {
+    console.log(`OTPValue`, OTPValue);
+    OTPValue && OTPValue.then((otp) => {
+      console.log(`otp`, otp);
+    }).catch(() => {
+      
+    });
+  }, [OTPValue]);
+
   return (
     <div className="App">
       <header className="App-header">
