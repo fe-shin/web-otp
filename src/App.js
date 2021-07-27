@@ -5,7 +5,6 @@ import useWebOTP from './useWebOTP';
 
 function App() {
 
-  const [foo, setFoo] = useState()
   const { OTPValue } = useWebOTP();
 
   useEffect(() => {
