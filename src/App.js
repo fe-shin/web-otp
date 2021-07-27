@@ -1,16 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import useWebOTP from './useWebOTP';
 
 function App() {
 
-  const OTPValue = useWebOTP();
+  const [foo, setFoo] = useState()
+  const { abortController, OTPValue } = useWebOTP();
 
   useEffect(() => {
-    console.log(`OTPValue`, OTPValue);
-    OTPValue && OTPValue.then((otp) => {
+    OTPValue.then((otp) => {
       console.log(`otp`, otp);
+      setFoo(otp.code);
     }).catch(() => {
       
     });
@@ -29,7 +30,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {foo}
         </a>
       </header>
     </div>
