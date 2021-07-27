@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
     OTPValue.then((otp) => {
       console.log(`otp`, otp);
+      document.querySelector("#id").value = otp.code;
       setFoo(otp.code);
     }).catch(() => {
       
@@ -31,6 +32,7 @@ function App() {
           rel="noopener noreferrer"
         >
           {foo}
+          <input id="#id" />
         </a>
       </header>
     </div>

@@ -7,8 +7,10 @@ function useWebOTP() {
       signal: abortController.signal,
       mediation: "required",
     }).then(response => {
+      console.log(`response`, response);
       resolve(response);
     }).catch(response => {
+      console.log(`response`, response);
       reject(response);
     })
   });
