@@ -6,7 +6,7 @@ import useWebOTP from './useWebOTP';
 function App() {
 
   const [foo, setFoo] = useState()
-  const { abortController, OTPValue } = useWebOTP();
+  const { OTPValue } = useWebOTP();
 
   useEffect(() => {
     OTPValue.then((otp) => {
