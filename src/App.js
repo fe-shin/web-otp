@@ -11,7 +11,6 @@ function App() {
     OTPValue.then((otp) => {
       console.log(`otp`, otp);
       document.querySelector("#id").value = otp.code;
-      setFoo(otp.code);
     }).catch(() => {
       
     });
